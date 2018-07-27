@@ -1,4 +1,6 @@
-FROM docker/whalesay:latest
+FROM ubuntu:trusty
 RUN apt-get update
 RUN apt-get install apache2 -y
-COPY 
+RUN echo "ServerName localhost:80" >> /etc/apache2/apache2.conf
+ADD ./index.html /var/www/html
+CMD apachectl -D FOREGROUND
