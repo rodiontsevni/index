@@ -21,7 +21,7 @@ pipeline {
 
       }
       steps {
-        copyArtifacts 'master'
+        copyArtifacts(projectName: 'master', target: 'lin')
       }
     }
     stage('Build3') {
