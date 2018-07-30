@@ -11,7 +11,6 @@ pipeline {
       steps {
         bat(script: 'copy /Y index.htm index.html', returnStatus: true)
         archiveArtifacts(artifacts: '*.html', allowEmptyArchive: true)
-        copyArtifacts 'master'
       }
     }
     stage('Build2') {
@@ -22,7 +21,7 @@ pipeline {
 
       }
       steps {
-        archiveArtifacts(artifacts: '*.h', allowEmptyArchive: true)
+        copyArtifacts 'master'
       }
     }
     stage('Build3') {
