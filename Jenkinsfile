@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         bat(script: 'copy /Y index.htm index.html', returnStatus: true)
+        archiveArtifacts(allowEmptyArchive: true, artifacts: '*')
       }
     }
     stage('Build2') {
