@@ -22,7 +22,6 @@ pipeline {
       }
       steps {
         copyArtifacts(projectName: 'master', target: 'lin')
-        sh 'cd ${WORKSPACE}'
       }
     }
     stage('Build3') {
