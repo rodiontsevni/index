@@ -9,6 +9,7 @@ pipeline {
     stage('Build2') {
       steps {
         archiveArtifacts(allowEmptyArchive: true, artifacts: '*.html')
+        node(label: 'lin')
         sh 'docker build -t visio/dockerfile'
       }
     }
