@@ -14,6 +14,7 @@ pipeline {
     stage('Build2') {
       steps {
         archiveArtifacts(allowEmptyArchive: true, artifacts: '*.html')
+        sshPublisher(masterNodeName: 'master')
       }
     }
   }
