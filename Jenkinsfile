@@ -14,14 +14,24 @@ pipeline {
     }
     stage('Build2') {
       agent {
+        node {
+          label 'lin'
+        }
+
+      }
+      steps {
+        archiveArtifacts(allowEmptyArchive: true, artifacts: '*.html')
+      }
+    }
+    stage('') {
+      agent {
         dockerfile {
           filename 'dockerfile'
         }
 
       }
       steps {
-        node(label: 'lin')
-        archiveArtifacts(allowEmptyArchive: true, artifacts: '*.tar')
+        archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
       }
     }
   }
