@@ -13,7 +13,18 @@ pipeline {
         archiveArtifacts(artifacts: '*.html', allowEmptyArchive: true)
       }
     }
-    stage('error') {
+    stage('Build2') {
+      agent {
+        node {
+          label 'lin'
+        }
+
+      }
+      steps {
+        archiveArtifacts(artifacts: '*.h', allowEmptyArchive: true)
+      }
+    }
+    stage('Build3') {
       agent {
         dockerfile {
           filename 'dockerfile'
@@ -21,7 +32,6 @@ pipeline {
 
       }
       steps {
-        node(label: 'lin')
         archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
       }
     }
