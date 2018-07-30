@@ -20,6 +20,7 @@ pipeline {
 
       }
       steps {
+        node(label: 'lin')
         archiveArtifacts(allowEmptyArchive: true, artifacts: '*.tar')
       }
     }
