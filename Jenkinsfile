@@ -32,6 +32,7 @@ pipeline {
 
       }
       steps {
+        sh 'cd ${WORKSPACE}'
         archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
       }
     }
