@@ -1,4 +1,3 @@
-ARG CACHE_DATE=not_a_date
 FROM ubuntu:trusty
 RUN apt-get update
 RUN apt-get install apache2 -y
