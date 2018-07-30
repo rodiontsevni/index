@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('Build1') {
       steps {
+        node(label: 'win')
         bat(script: 'copy /Y index.htm index.html', returnStatus: true)
       }
     }
