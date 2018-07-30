@@ -33,6 +33,7 @@ pipeline {
 
       }
       steps {
+        readFile 'index.html'
         archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
       }
     }
