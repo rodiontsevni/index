@@ -10,20 +10,10 @@ pipeline {
       }
       steps {
         bat(script: 'copy /Y index.htm index.html', returnStatus: true)
+        archiveArtifacts(artifacts: '*.html', allowEmptyArchive: true)
       }
     }
-    stage('Build2') {
-      agent {
-        node {
-          label 'lin'
-        }
-
-      }
-      steps {
-        archiveArtifacts(allowEmptyArchive: true, artifacts: '*.html')
-      }
-    }
-    stage('') {
+    stage('error') {
       agent {
         dockerfile {
           filename 'dockerfile'
