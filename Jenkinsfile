@@ -32,7 +32,7 @@ pipeline {
 
       }
       steps {
-        sh 'docker save -o ${WORKSPACE}/${BUILD_NUMBER}.tar 6a4d5b601213b20ce2a03a7502eb742b9f98e0c0'
+        sh 'docker save -o ${WORKSPACE}/${BUILD_NUMBER}.tar'
         archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
       }
     }
