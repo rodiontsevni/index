@@ -32,7 +32,7 @@ pipeline {
 
       }
       steps {
-        archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true)
+        archiveArtifacts(artifacts: '*.tar', allowEmptyArchive: true, caseSensitive: true)
       }
     }
   }
